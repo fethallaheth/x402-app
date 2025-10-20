@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Payment Required - Ethereum Insights</title>
+  <meta name="description" content="Payment required to access Ethereum article">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="title">Ethereum Insights</h1>
+      <p class="subtitle">Payment Required</p>
+    </header>
+
+    <main class="blog-container">
+      <div class="card">
+        <div class="content">
+          <h2>Access Required</h2>
+          <p>To read the full Ethereum article, please complete the payment process.</p>
+          
+          <div class="payment-info">
+            <h3>Payment Details</h3>
+            <ul>
+              <li><strong>Amount:</strong> $0.001 USD</li>
+              <li><strong>Network:</strong> Base Sepolia</li>
+              <li><strong>Content:</strong> Full Ethereum Article Access</li>
+            </ul>
+          </div>
+
+          <div class="payment-actions">
+            <button class="button primary" onclick="initiatePayment()">Pay with Crypto Wallet</button>
+            <button class="button" onclick="window.location.href='/'">Back to Home</button>
+          </div>
+
+          <div id="payment-status" style="display: none; margin-top: 20px; padding: 16px; background: #f9fafb; border-radius: 8px;">
+            <p>Processing payment...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Ethereum Insights</h4>
+          <p>Your trusted source for blockchain education and Ethereum technology insights.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ethereum Insights. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    async function initiatePayment() {
+      const statusDiv = document.getElementById('payment-status');
+      statusDiv.style.display = 'block';
+      statusDiv.innerHTML = '<p>Initiating payment process...</p>';
+
+      try {
+        // Simulate payment process
+        // In a real implementation, this would integrate with X402
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        statusDiv.innerHTML = '<p style="color: green;">Payment successful! Redirecting to article...</p>';
+        
+        // Redirect to article after successful payment
+        setTimeout(() => {
+          window.location.href = '/article';
+        }, 1500);
+        
+      } catch (error) {
+        statusDiv.innerHTML = '<p style="color: red;">Payment failed. Please try again.</p>';
+      }
+    }
+
+    // Check if user came from payment flow
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      document.getElementById('payment-status').style.display = 'block';
+      document.getElementById('payment-status').innerHTML = '<p style="color: green;">Payment successful! Redirecting to article...</p>';
+      setTimeout(() => {
+        window.location.href = '/article';
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

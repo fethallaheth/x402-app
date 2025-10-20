@@ -7,8 +7,8 @@
 
 [[redirects]]
   from = "/auth"
-  to = "/article"
-  status = 302
+  to = "/auth.html"
+  status = 200
 
 [[redirects]]
   from = "/*"
