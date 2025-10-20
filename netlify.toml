@@ -5,11 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[redirects]]
-  from = "/auth"
-  to = "/"
-  status = 200
-  
+
 [[redirects]]
   from = "/auth"
   to = "/.netlify/functions/auth"
