@@ -1,24 +1,18 @@
 [build]
   command = "npm run build"
-  functions = "netlify/functions"
   publish = "public"
 
 [build.environment]
   NODE_VERSION = "18"
 
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server"
+  from = "/auth"
+  to = "/"
   status = 200
-
+  
 [[redirects]]
   from = "/auth"
-  to = "/.netlify/functions/server"
-  status = 200
-
-[[redirects]]
-  from = "/article"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/auth"
   status = 200
 
 [[redirects]]
