@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/auth"
+  to = "/article"
+  status = 302
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
