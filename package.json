@@ -1,0 +1,21 @@
+{
+  "name": "x402-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coinbase/x402": "^0.6.6",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "viem": "^2.38.3",
+    "x402-express": "^0.6.5"
+  }
+}
